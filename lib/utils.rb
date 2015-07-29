@@ -5,6 +5,8 @@ class Utils
 
   TMP_DIR = 'tmp'
   IMG_EXTENSION = '.png'
+  def tmp_dir; TMP_DIR; end
+  def img_extension; IMG_EXTENSION; end
 
   def new_frame(dir, counter)
     File.join(dir, counter.to_s.rjust(5, '0') + img_extension)
@@ -115,8 +117,6 @@ class Utils
     result
   end
 
-  def tmp_dir; TMP_DIR; end
-  def img_extension; IMG_EXTENSION; end
   private
 
   def frame_to_i(frame)

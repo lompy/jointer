@@ -3,6 +3,8 @@ require_relative 'utils'
 require_relative 'frame_jointer'
 
 class Jointer
+  attr_reader :db, :files, :jointees, :max_id
+
   def initialize(db)
     @db = db
     @max_id = 0
@@ -19,10 +21,6 @@ class Jointer
 
   private
 
-  def db; @db; end
-  def files; @files; end
-  def jointees; @jointees; end
-  def max_id; @max_id; end
   def jointee(id); jointees.fetch(id); end
   def utils; Utils.instance; end
 

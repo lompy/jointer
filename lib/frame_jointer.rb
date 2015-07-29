@@ -4,6 +4,9 @@ class FrameJointer
   DIR_POSTFIX = 'frame_jointer'
   BASENAME_SIZE = 5
 
+  attr_reader :jointee_1, :jointee_2, :dir, :frame_counter,
+              :first_frame, :center_frame, :last_frame
+
   def initialize(jointee_1, jointee_2)
     @jointee_1 = jointee_1
     @jointee_2 = jointee_2
@@ -22,16 +25,9 @@ class FrameJointer
 
   private
 
-  def jointee_1; @jointee_1; end
-  def jointee_2; @jointee_2; end
   def utils; Utils.instance; end
   def dir_postfix; DIR_POSTFIX; end
-  def dir; @dir; end
-  def frame_counter; @frame_counter; end
   def basename_size; BASENAME_SIZE; end
-  def first_frame; @first_frame; end
-  def center_frame; @center_frame; end
-  def last_frame; @last_frame; end
 
   def inc_frame_counter
     @frame_counter += 1
